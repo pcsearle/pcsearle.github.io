@@ -23,4 +23,4 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am PhD Candidate in the Department of Ecology and Evolutionary Biology at Cornell University. As a visual ecologist, I am interested in understanding how organisms see under different environmental and ecological contexts. 
+I am Ph.D. Candidate in the [Department of Ecology and Evolutionary Biology](https://ecologyandevolution.cornell.edu/) at [Cornell University](https://www.cornell.edu/) in the [Gordon Lab](https://ecologyandevolution.cornell.edu/swanne-gordon). Prior to starting my Ph.D., I received a M.Sc. while working with [Dr. Mark Belk](https://biology.byu.edu/directory/mark-belk) at [Brigham Young University](https://www.byu.edu/). I am interested in **evolutionary biology**, **visual ecology**, and **conservation biology**. I am parcitularly interested in understanding how fish see under different environmental and ecological contexts. 
