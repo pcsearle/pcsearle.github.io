@@ -53,8 +53,8 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-visual-evolution-in-marine-species",
-          title: 'Visual Evolution in Marine Species',
+          section: "News",},{id: "projects-visual-evolution-in-rockfish",
+          title: 'Visual Evolution in Rockfish',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project.html";
