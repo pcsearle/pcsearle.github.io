@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Visual Evolution in Marine Species
+title: Visual Evolution in Rockfish
 img: assets/img/projects/project1/Sebastes_nigrocinctus.jpeg
 importance: 1
 category: work
