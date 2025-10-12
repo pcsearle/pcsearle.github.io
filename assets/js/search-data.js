@@ -55,7 +55,7 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-visual-evolution-in-marine-species",
           title: 'Visual Evolution in Marine Species',
-          description: "with background image",
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project.html";
             },},{
