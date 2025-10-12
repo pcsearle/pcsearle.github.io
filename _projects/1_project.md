@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 1
+title: Visual Evolution in Marine Species
 description: with background image
-img: assets/img/12.jpg
+img: assets/img/projects/project1/Sebastes_nigrocinctus.jpeg
 importance: 1
 category: work
 related_publications: true
