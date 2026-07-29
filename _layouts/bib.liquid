@@ -274,7 +274,12 @@
       {% if entry.inspirehep_id %}
         {% assign entry_has_inspirehep_badge = true %}
       {% endif %}
-      {% if entry_has_altmetric_badge or entry_has_dimensions_badge or entry_has_google_scholar_badge or entry_has_inspirehep_badge %}
+
+      {% assign entry_has_semantic_scholar_badge = false %}
+      {% if entry.doi %}
+        {% assign entry_has_semantic_scholar_badge = true %}
+      {% endif %}
+      {% if entry_has_altmetric_badge or entry_has_dimensions_badge or entry_has_google_scholar_badge or entry_has_inspirehep_badge or entry_has_semantic_scholar_badge %}
         <div class="badges">
           {% if site.enable_publication_badges.altmetric and entry_has_altmetric_badge %}
             <span
@@ -332,6 +337,18 @@
               <img
                 src="https://img.shields.io/badge/inspire-{% inspirehep_citations entry.inspirehep_id %}-001628?logo=inspire&logoColor=001628&labelColor=beige"
                 alt="{% inspirehep_citations entry.inspirehep_id %} InspireHEP citations"
+              >
+            </a>
+          {% endif %}
+          {% if site.enable_publication_badges.semantic_scholar and entry_has_semantic_scholar_badge %}
+            <a
+              href="https://www.semanticscholar.org/search?q={{ entry.doi }}&sort=relevance"
+              aria-label="Semantic Scholar link"
+              role="button"
+            >
+              <img
+                src="https://img.shields.io/badge/citations-{% semantic_scholar_citations entry.doi %}-1857B6?logo=semanticscholar&labelColor=beige"
+                alt="{% semantic_scholar_citations entry.doi %} citations (Semantic Scholar)"
               >
             </a>
           {% endif %}
