@@ -213,7 +213,7 @@ enable_publication_badges:
   dimensions: true # Dimensions badge (Customization options: https://badge.dimensions.ai/)
   google_scholar: false # Google Scholar badge (disabled: relies on scraping, unreliable on GitHub Actions runners)
   inspirehep: true # Inspire HEP badge (https://help.inspirehep.net/knowledge-base/citation-metrics/)
-  semantic_scholar: true # Semantic Scholar citation count badge, fetched live via their public API using each entry's DOI
+  semantic_scholar: false # Disabled for now (undercounts vs Google Scholar for this field); code left in place to re-enable later
 
 # Filter out certain bibtex entry keywords used internally from the bib output
 filtered_bibtex_keywords:
