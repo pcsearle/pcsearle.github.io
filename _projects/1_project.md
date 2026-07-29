@@ -27,3 +27,15 @@ Rockfish (<i>Sebastes</i>)&mdash;a diverse genus of marine fishes&mdash;are an e
 <div class="caption">
     Two of the many rockfish species I study, each adapted to a different depth and light environment.
 </div>
+
+<div class="row row-cols-1 row-cols-md-2">
+    <div class="col mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/project1/tiger_rockfish_specimen.jpg" title="Tiger rockfish" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/project1/copper_rockfish_specimen.jpg" title="Copper rockfish" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Tiger rockfish (left) and copper rockfish (right).
+</div>
