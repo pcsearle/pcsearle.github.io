@@ -51,11 +51,6 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project.html";
-            },},{id: "projects-salmonid-conservation",
-          title: 'Salmonid Conservation',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project.html";
             },},{
         id: 'social-email',
         title: 'email',
