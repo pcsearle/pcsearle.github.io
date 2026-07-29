@@ -16,3 +16,15 @@ related_publications: true
 Have you ever wondered how fish see in the deep-sea? As light attenuates through water, the available light spectrum rapidly diminshes and is eventually lost. Visual systems have evolved to capture light in this challenging environment at behavioral, morphological, physiological, and molecular levels. I am particularly interested in understanding how opsins-a universal component of visual systems in all light-sensitive organisms that detect and respond to environmental stimuli-respond to environmental pressures. 
 
 Rockfish (<i>Sebastes</i>) is an adaptive radiation of marine fishes that inhabit a wide range of light environments (0-1500m). 
+
+<div class="row row-cols-1 row-cols-md-2">
+    <div class="col mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/project1/dark_rockfish.jpeg" title="Dark rockfish" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/project1/redstripe_rockfish.jpeg" title="Redstripe rockfish" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Two of the many rockfish species I study, each adapted to a different depth and light environment.
+</div>
