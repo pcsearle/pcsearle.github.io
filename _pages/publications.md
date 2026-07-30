@@ -10,6 +10,16 @@ nav_order: 2
 
 <div class="publications">
 
-{% bibliography %}
+## Peer-Reviewed Publications
+
+{% bibliography --file papers %}
+
+## Preprints
+
+{% bibliography --file preprints %}
+
+## Book Chapters
+
+{% bibliography --file book_chapters %}
 
 </div>
