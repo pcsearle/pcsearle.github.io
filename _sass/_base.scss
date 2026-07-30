@@ -712,6 +712,14 @@ footer.sticky-bottom {
   }
 
   h2 {
+    margin-bottom: 1rem;
+
+    span {
+      font-size: 1.5rem;
+    }
+  }
+
+  h2.section-heading {
     margin-top: 3rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
@@ -720,13 +728,9 @@ footer.sticky-bottom {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: 1.5rem;
-
-    span {
-      font-size: 1.5rem;
-    }
   }
 
-  h2:first-child {
+  h2.section-heading:first-child {
     margin-top: 0;
   }
 
