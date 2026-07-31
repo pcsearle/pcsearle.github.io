@@ -543,21 +543,24 @@ third_party_libraries:
 # -----------------------------------------------------------------------------
 # Get external JSON data
 # -----------------------------------------------------------------------------
+# Disabled: not using the JSON-resume data source for the CV page, using a
+# linked PDF (see _pages/cv.md) instead. This used to load placeholder
+# Einstein data from assets/json/resume.json which overrode _data/cv.yml.
 
-jekyll_get_json:
-  - data: resume
-    json: assets/json/resume.json # it can also be an url
+# jekyll_get_json:
+#   - data: resume
+#     json: assets/json/resume.json
 
-jsonresume:
-  - basics
-  - work
-  - education
-  - publications
-  - projects
-  - volunteer
-  - awards
-  - certificates
-  - skills
-  - languages
-  - interests
-  - references
+# jsonresume:
+#   - basics
+#   - work
+#   - education
+#   - publications
+#   - projects
+#   - volunteer
+#   - awards
+#   - certificates
+#   - skills
+#   - languages
+#   - interests
+#   - references
