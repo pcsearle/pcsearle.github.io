@@ -1,0 +1,22 @@
+{%- comment -%}
+  Renders every image found in a given folder as a shuffleable photo grid.
+  Usage: {% include photo_gallery.liquid folder="assets/img/about_gallery" id="field-photo-gallery" %}
+  Just drop new images into the folder and they'll show up automatically --
+  no need to edit this page. Order is shuffled client-side on each page load
+  (see assets/js/shuffle-gallery.js).
+{%- endcomment -%}
+<div class="field-gallery" id="{{ include.id | default: 'photo-gallery' }}">
+  {%- assign folder_path = include.folder | prepend: '/' -%}
+  {%- for file in site.static_files -%}
+    {%- if file.path contains folder_path -%}
+      <div class="field-gallery-item">
+        <img
+          src="{{ file.path | relative_url }}"
+          data-zoomable
+          loading="lazy"
+          alt="Photo of Peter Searle in the field"
+        >
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
