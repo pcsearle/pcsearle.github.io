@@ -700,38 +700,56 @@ footer.sticky-bottom {
 
 // Publications
 
-// Field photo collage (About page)
-// A "justified row" layout: every photo shares a common height but keeps
-// its own natural width, so nothing gets cropped -- portrait and landscape
-// photos sit side by side without forcing a uniform box shape on them.
+// About page: bio text alongside a small photo cluster, side by side,
+// rather than stacked, so the page fits in view without extra scrolling.
 
-.about-collage {
+.about-flex {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
 
-  .collage-item {
-    height: 260px;
-    overflow: hidden;
-    border-radius: 10px;
+  .about-text {
+    flex: 1 1 60%;
+    min-width: 0;
+  }
 
-    img {
-      display: block;
-      height: 100%;
-      width: auto;
-      max-width: 100%;
-      border-radius: 10px;
+  .about-collage {
+    flex: 1 1 38%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 90px;
+    gap: 0.5rem;
+
+    .collage-item {
+      overflow: hidden;
+      border-radius: 8px;
+
+      &:first-child {
+        grid-column: 1 / 3;
+        grid-row: span 2;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
     }
   }
 }
 
 @media (max-width: 768px) {
-  .about-collage .collage-item {
-    height: 170px;
+  .about-flex {
+    flex-direction: column;
+
+    .about-text,
+    .about-collage {
+      flex: 1 1 100%;
+      width: 100%;
+    }
   }
 }
 
