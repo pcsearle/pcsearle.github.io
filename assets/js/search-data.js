@@ -23,6 +23,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/research/";
           },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Click the PDF icon to view or download my current CV.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
         },{id: "projects-visual-evolution-in-rockfish",
           title: 'Visual Evolution in Rockfish',
           description: "",
