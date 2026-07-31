@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".field-gallery").forEach(function(e){for(var n=Array.prototype.slice.call(e.children),o=n.length-1;o>0;o--){var r=Math.floor(Math.random()*(o+1)),t=n[o];n[o]=n[r],n[r]=t}n.forEach(function(n){e.appendChild(n)})})});
