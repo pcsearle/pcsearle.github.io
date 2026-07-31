@@ -716,18 +716,23 @@ footer.sticky-bottom {
 
   .about-collage {
     flex: 1 1 38%;
+    min-width: 240px; // never let the photo cluster get squeezed narrower than this
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 90px;
     gap: 0.5rem;
 
     .collage-item {
       overflow: hidden;
       border-radius: 8px;
+      // Square cells at any width -- using aspect-ratio instead of a fixed
+      // pixel height means the crop stays consistent as the column resizes,
+      // instead of getting more and more cropped as it narrows.
+      aspect-ratio: 1 / 1;
 
       &:first-child {
         grid-column: 1 / 3;
         grid-row: span 2;
+        aspect-ratio: 2 / 1;
       }
 
       img {
@@ -741,7 +746,9 @@ footer.sticky-bottom {
   }
 }
 
-@media (max-width: 768px) {
+// Switch to a single stacked column well before things get cramped --
+// this covers "half a normal desktop window" widths, not just phones.
+@media (max-width: 992px) {
   .about-flex {
     flex-direction: column;
 

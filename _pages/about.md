@@ -19,7 +19,7 @@ I am Ph.D. Candidate in the [Department of Ecology and Evolutionary Biology](htt
 <img src="{{ '/assets/img/about_gallery/field_09.jpg' | relative_url }}" alt="Peter Searle with his field research team">
 </div>
 <div class="collage-item">
-<img src="{{ '/assets/img/about_gallery/field_03.jpg' | relative_url }}" alt="Peter Searle sampling in the field">
+<img src="{{ '/assets/img/about_gallery/field_07.jpg' | relative_url }}" alt="Peter Searle holding a large fish on a fishing boat">
 </div>
 <div class="collage-item">
 <img src="{{ '/assets/img/about_gallery/field_04.jpg' | relative_url }}" alt="Peter Searle fly fishing in the ocean">
