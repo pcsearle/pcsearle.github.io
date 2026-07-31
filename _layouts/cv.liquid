@@ -26,6 +26,23 @@ layout: default
       {% endif %}
     </header>
 
+    {% if page.cv_embed_url or page.cv_pdf %}
+      {% if page.cv_embed_url %}
+        {% assign cv_embed_src = page.cv_embed_url %}
+      {% elsif page.cv_pdf contains '://' %}
+        {% assign cv_embed_src = page.cv_pdf %}
+      {% else %}
+        {% assign cv_embed_src = page.cv_pdf | prepend: 'assets/pdf/' | relative_url %}
+      {% endif %}
+      <div class="cv-pdf-embed mb-4">
+        <iframe
+          src="{{ cv_embed_src }}"
+          title="{{ page.title }}"
+          style="width: 100%; height: 85vh; border: 1px solid var(--global-divider-color); border-radius: 8px;"
+        ></iframe>
+      </div>
+    {% endif %}
+
     <article>
       <div class="cv">
         {% for entry in site.data.cv %}
