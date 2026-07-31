@@ -701,34 +701,38 @@ footer.sticky-bottom {
 // Publications
 
 // Field photo gallery (About page)
-// Masonry-style layout via CSS columns, so photos of different orientations
-// sit at their natural aspect ratio instead of being force-cropped into a
-// uniform grid.
+// A clean, uniform row of photos. Only a handful are shown at a time --
+// see the $field-gallery-visible-count variable below -- and which ones
+// is randomized on each page load by assets/js/shuffle-gallery.js, which
+// shuffles ALL items in the pool and this CSS just hides everything past
+// the Nth one. As more photos get added to the pool over time, this still
+// only ever shows that many at once, picked at random.
+
+$field-gallery-visible-count: 5;
 
 .field-gallery {
-  columns: 4 180px;
-  column-gap: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 
   .field-gallery-item {
-    break-inside: avoid;
-    margin-bottom: 0.6rem;
-    border-radius: 8px;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
+    border-radius: 8px;
+
+    &:nth-child(n + #{$field-gallery-visible-count + 1}) {
+      display: none;
+    }
 
     img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
       border-radius: 8px;
     }
-  }
-}
-
-@media (max-width: 576px) {
-  .field-gallery {
-    columns: 2 140px;
   }
 }
 
