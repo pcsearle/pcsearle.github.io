@@ -1,18 +1,25 @@
 {%- comment -%}
-  Renders every image found in a given folder as a shuffleable photo grid.
-  Usage: {% include photo_gallery.liquid folder="assets/img/about_gallery" id="field-photo-gallery" %}
+  Renders every image found in a given folder as a shuffleable, distributed
+  photo layout (masonry-style). Usage:
+    {% include photo_gallery.liquid folder="assets/img/about_gallery" id="field-photo-gallery" %}
   Just drop new images into the folder and they'll show up automatically --
   no need to edit this page. Order is shuffled client-side on each page load
   (see assets/js/shuffle-gallery.js).
+
+  Only real image files are included (jpg/jpeg/png) -- this deliberately
+  excludes the .webp responsive-image variants Jekyll's imagemagick plugin
+  generates alongside the originals, since those would otherwise show up as
+  visual duplicates of the same photo.
 {%- endcomment -%}
 <div class="field-gallery" id="{{ include.id | default: 'photo-gallery' }}">
   {%- assign folder_path = include.folder | prepend: '/' -%}
+  {%- assign allowed_ext = ".jpg,.jpeg,.png" | split: "," -%}
   {%- for file in site.static_files -%}
-    {%- if file.path contains folder_path -%}
+    {%- assign ext = file.extname | downcase -%}
+    {%- if file.path contains folder_path and allowed_ext contains ext -%}
       <div class="field-gallery-item">
         <img
           src="{{ file.path | relative_url }}"
-          data-zoomable
           loading="lazy"
           alt="Photo of Peter Searle in the field"
         >
