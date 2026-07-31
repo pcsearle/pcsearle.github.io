@@ -146,7 +146,6 @@ exclude:
   - _pages/dropdown.md
   - _pages/repositories.md
   - _pages/projects.md
-  - _pages/cv.md
   - _projects/2_project.md
 keep_files:
   - CNAME
