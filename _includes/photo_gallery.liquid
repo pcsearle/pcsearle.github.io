@@ -1,10 +1,15 @@
 {%- comment -%}
-  Renders every image found in a given folder as a shuffleable, distributed
-  photo layout (masonry-style). Usage:
-    {% include photo_gallery.liquid folder="assets/img/about_gallery" id="field-photo-gallery" %}
+  Renders every image found in a given folder as a shuffleable photo row.
+  Usage:
+    {% include photo_gallery.liquid folder="assets/img/about_gallery" id="field-photo-gallery" pinned="field_00_profile" %}
   Just drop new images into the folder and they'll show up automatically --
-  no need to edit this page. Order is shuffled client-side on each page load
-  (see assets/js/shuffle-gallery.js).
+  no need to edit this page. Which photos are visible is shuffled client-side
+  on each page load (see assets/js/shuffle-gallery.js); only the first few
+  (see $field-gallery-visible-count in _sass/_base.scss) are shown at a time.
+
+  If "pinned" is given (a filename, without extension), that photo is always
+  shown first/rather than being included in the shuffle -- handy for a
+  headshot you want visible on every visit.
 
   Only real image files are included (jpg/jpeg/png) -- this deliberately
   excludes the .webp responsive-image variants Jekyll's imagemagick plugin
@@ -17,11 +22,15 @@
   {%- for file in site.static_files -%}
     {%- assign ext = file.extname | downcase -%}
     {%- if file.path contains folder_path and allowed_ext contains ext -%}
-      <div class="field-gallery-item">
+      {%- assign is_pinned = false -%}
+      {%- if include.pinned and file.path contains include.pinned -%}
+        {%- assign is_pinned = true -%}
+      {%- endif -%}
+      <div class="field-gallery-item" {% if is_pinned %}data-pinned="true"{% endif %}>
         <img
           src="{{ file.path | relative_url }}"
           loading="lazy"
-          alt="Photo of Peter Searle in the field"
+          alt="Photo of Peter Searle"
         >
       </div>
     {%- endif -%}
