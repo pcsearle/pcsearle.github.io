@@ -700,38 +700,47 @@ footer.sticky-bottom {
 
 // Publications
 
-// Field photo gallery (About page)
-// A clean, uniform row of photos. Only a handful are shown at a time --
-// see the $field-gallery-visible-count variable below -- and which ones
-// is randomized on each page load by assets/js/shuffle-gallery.js, which
-// shuffles ALL items in the pool and this CSS just hides everything past
-// the Nth one. As more photos get added to the pool over time, this still
-// only ever shows that many at once, picked at random.
+// Field photo collage (About page)
+// A deliberate, asymmetric arrangement: one larger "hero" photo alongside
+// three smaller supporting photos, rather than a uniform grid/row.
 
-$field-gallery-visible-count: 5;
-
-.field-gallery {
+.about-collage {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
   gap: 0.75rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  height: 420px;
 
-  .field-gallery-item {
-    aspect-ratio: 4 / 3;
+  .collage-hero {
+    grid-column: 1;
+    grid-row: 1 / 4;
+  }
+
+  .collage-item {
     overflow: hidden;
-    border-radius: 8px;
-
-    &:nth-child(n + #{$field-gallery-visible-count + 1}) {
-      display: none;
-    }
+    border-radius: 10px;
 
     img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 10px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .about-collage {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px repeat(3, 100px);
+    height: auto;
+
+    .collage-hero {
+      grid-column: 1 / 3;
+      grid-row: 1;
     }
   }
 }
