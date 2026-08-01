@@ -12,7 +12,10 @@ I care about making science accessible outside the lab &mdash; whether that's wr
 <hr class="my-4">
 
 <div class="row align-items-center">
-    <div class="col-md-12">
+    <div class="col-md-6">
+        <img src="https://www.frontiersin.org/files/Articles/1170134/frym-11-1170134-HTML/image_m/main.jpg" alt="Colorful guppies" class="img-fluid rounded z-depth-1">
+    </div>
+    <div class="col-md-6">
         <h3>Guppies: Small Fish to Answer Big Questions in Ecology and Evolution</h3>
         <p>A plain-language article for kids, written with the Gordon Lab and reviewed by a kid editorial board, explaining why guppies are such a powerful model for studying evolution in the wild.</p>
         <p><em>Frontiers for Young Minds</em>, 2023</p>
@@ -37,18 +40,15 @@ I care about making science accessible outside the lab &mdash; whether that's wr
 <hr class="my-4">
 
 <div class="row align-items-center">
-    <div class="col-md-12">
+    <div class="col-md-6">
+        <a href="https://www.youtube.com/watch?v=89BVXA2LCYY" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/89BVXA2LCYY/hqdefault.jpg" alt="A School of Fish video thumbnail" class="img-fluid rounded z-depth-1">
+        </a>
+    </div>
+    <div class="col-md-6">
         <h3>A School of Fish: Reel-World BYU Climate Research in Alaska</h3>
         <p>A short BYU video following fieldwork on climate and fish in Alaska.</p>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px;">
-            <iframe
-                src="https://www.youtube.com/embed/89BVXA2LCYY"
-                title="A School of Fish: Reel-world BYU climate research in Alaska"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 8px;"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-            ></iframe>
-        </div>
+        <p><a href="https://www.youtube.com/watch?v=89BVXA2LCYY" target="_blank" rel="noopener noreferrer">Watch on YouTube &rarr;</a></p>
         <p><a href="https://biology.byu.edu/a-school-of-fish" target="_blank" rel="noopener noreferrer">More on the BYU Biology site &rarr;</a></p>
     </div>
 </div>
