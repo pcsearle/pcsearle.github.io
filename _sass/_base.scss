@@ -776,6 +776,46 @@ footer.sticky-bottom {
   }
 }
 
+// On wide/full-page layouts, tuck the social icons up under the bio text
+// instead of leaving them in their default spot below the whole
+// text+photo row -- this uses the left column's height more fully and
+// avoids a big empty gap before the icons show up. This unwraps the two
+// wrapper divs (.clearfix, .about-flex) via display:contents so
+// .about-text, .social, and .about-collage become direct grid items of
+// <article>, which is then free to place them in a 2-column grid.
+// Easy to remove/revert: delete this block and .about-flex reverts to
+// its normal side-by-side layout with icons below, as before.
+@media (min-width: 993px) {
+  article:has(.about-flex) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+
+  article:has(.about-flex) > .clearfix,
+  article:has(.about-flex) .about-flex {
+    display: contents;
+  }
+
+  article:has(.about-flex) .about-text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  article:has(.about-flex) .social {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 0.5rem;
+  }
+
+  article:has(.about-flex) .about-collage {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+}
+
 .publications {
   margin-top: 2rem;
 
