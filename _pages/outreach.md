@@ -23,6 +23,20 @@ I care about making science accessible outside the lab &mdash; whether that's wr
 <hr class="my-4">
 
 <div class="row align-items-center">
+    <div class="col-md-6">
+        {% include figure.liquid path="assets/img/outreach/microfishing_composite.jpg" title="Microfish from around the world" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-md-6">
+        <h3>Microfishing: A Celebration of Diversity</h3>
+        <p>A piece on microfishing &mdash; the pursuit of North America's overlooked nongame fish species &mdash; and why the small, "rough" fish anglers usually ignore matter for conservation.</p>
+        <p><em>The Quill</em>, Theodore Gordon Flyfishers, Summer 2023</p>
+        <p><a href="https://drive.google.com/file/d/1ZKXv13ZD6mn2z2ylHQ02QZlY3RofwWat/view" target="_blank" rel="noopener noreferrer">Read the issue &rarr;</a></p>
+    </div>
+</div>
+
+<hr class="my-4">
+
+<div class="row align-items-center">
     <div class="col-md-12">
         <h3>A School of Fish: Reel-World BYU Climate Research in Alaska</h3>
         <p>A short BYU video following fieldwork on climate and fish in Alaska.</p>
