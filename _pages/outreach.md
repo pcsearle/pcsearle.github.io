@@ -42,7 +42,7 @@ I care about making science accessible outside the lab &mdash; whether that's wr
 <div class="row align-items-center">
     <div class="col-md-6">
         <a href="https://www.youtube.com/watch?v=89BVXA2LCYY" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/89BVXA2LCYY/hqdefault.jpg" alt="A School of Fish video thumbnail" class="img-fluid rounded z-depth-1">
+            {% include figure.liquid path="assets/img/outreach/byu_fly_fishing_class.jpg" title="BYU fly fishing class in the field" class="img-fluid rounded z-depth-1" %}
         </a>
     </div>
     <div class="col-md-6">
