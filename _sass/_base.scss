@@ -705,35 +705,30 @@ footer.sticky-bottom {
 
 .about-flex {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.5rem;
   margin-top: 0.5rem;
 
   .about-text {
-    flex: 1 1 60%;
+    flex: 1 1 55%;
     min-width: 0;
   }
 
+  // A single row of 4 equal squares -- deliberately short, so its height
+  // is in the same ballpark as a few lines of bio text, rather than the
+  // tall stacked grid we had before, which visually overhung the text.
   .about-collage {
-    flex: 1 1 38%;
-    min-width: 240px; // never let the photo cluster get squeezed narrower than this
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    flex: 1 1 45%;
+    min-width: 260px;
+    display: flex;
     gap: 0.5rem;
 
     .collage-item {
+      flex: 1 1 0;
+      min-width: 0;
+      aspect-ratio: 1 / 1;
       overflow: hidden;
       border-radius: 8px;
-      // Square cells at any width -- using aspect-ratio instead of a fixed
-      // pixel height means the crop stays consistent as the column resizes,
-      // instead of getting more and more cropped as it narrows.
-      aspect-ratio: 1 / 1;
-
-      &:first-child {
-        grid-column: 1 / 3;
-        grid-row: span 2;
-        aspect-ratio: 2 / 1;
-      }
 
       img {
         display: block;
