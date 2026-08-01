@@ -1561,6 +1561,31 @@ figure.cover {
   }
 }
 
+// CV page: lock the outer page so it can't scroll at all -- only the
+// embedded CV itself scrolls -- and vertically center the embed in the
+// exact space between the fixed navbar (56px) and fixed footer (70px),
+// so there's equal breathing room above and below regardless of the
+// embed's exact height. Scoped to just this page (via :has), so it's
+// self-contained and easy to revert -- delete this whole block plus the
+// two rules below it to go back to normal page scrolling.
+html:has(.cv-pdf-embed),
+body:has(.cv-pdf-embed) {
+  overflow: hidden;
+}
+
+// Overrides Bootstrap's .mt-5 utility class on <div class="container mt-5">
+// (higher specificity via :has, so no !important needed) and instead
+// sizes the container to exactly fill the navbar-to-footer gap, then
+// centers its content (the .post block, effectively just the CV embed
+// since the page header is hidden) vertically within that space.
+.container:has(.cv-pdf-embed) {
+  margin-top: 0;
+  height: calc(100vh - 56px - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .cv-pdf-embed {
   display: flex;
   justify-content: center;
