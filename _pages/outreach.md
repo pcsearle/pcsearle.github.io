@@ -49,7 +49,6 @@ I care about making science accessible outside the lab &mdash; whether that's wr
         <h3>A School of Fish: Reel-World BYU Climate Research in Alaska</h3>
         <p>A short BYU video following fieldwork on climate and fish in Alaska.</p>
         <p><a href="https://www.youtube.com/watch?v=89BVXA2LCYY" target="_blank" rel="noopener noreferrer">Watch on YouTube &rarr;</a></p>
-        <p><a href="https://biology.byu.edu/a-school-of-fish" target="_blank" rel="noopener noreferrer">More on the BYU Biology site &rarr;</a></p>
     </div>
 </div>
 
