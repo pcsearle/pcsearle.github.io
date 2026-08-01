@@ -714,13 +714,10 @@ footer.sticky-bottom {
     min-width: 0;
   }
 
-  // A single row of 4 equal squares -- deliberately short, so its height
-  // is in the same ballpark as a few lines of bio text, rather than the
-  // tall stacked grid we had before, which visually overhung the text.
   .about-collage {
     flex: 1 1 45%;
     min-width: 260px;
-    display: flex;
+    display: flex; // single row -- used at narrower/stacked widths
     gap: 0.5rem;
 
     .collage-item {
@@ -743,6 +740,8 @@ footer.sticky-bottom {
 
 // Switch to a single stacked column well before things get cramped --
 // this covers "half a normal desktop window" widths, not just phones.
+// The photo row keeps its full-width single-row treatment here, which
+// makes each square nice and large.
 @media (max-width: 992px) {
   .about-flex {
     flex-direction: column;
@@ -752,6 +751,19 @@ footer.sticky-bottom {
       flex: 1 1 100%;
       width: 100%;
     }
+  }
+}
+
+// On wide/full-page layouts, the photo cluster only gets ~45% of the
+// content width to share (since text takes the rest) -- splitting 4
+// photos across a single row there makes each one tiny. Use a 2x2 grid
+// instead, so each photo gets roughly double the room.
+// (Selector matches .about-flex .about-collage's specificity so this
+// actually overrides the display:flex set above.)
+@media (min-width: 993px) {
+  .about-flex .about-collage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
