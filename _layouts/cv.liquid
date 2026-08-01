@@ -36,11 +36,17 @@ layout: default
       {% else %}
         {% assign cv_embed_src = page.cv_pdf | prepend: 'assets/pdf/' | relative_url %}
       {% endif %}
-      <div class="cv-pdf-embed mb-4">
+      {% comment %}
+        Sized to fill exactly the space between the fixed navbar (56px) and
+        fixed footer (70px), so the outer page never needs to scroll -- the
+        embedded PDF viewer's own internal scrolling/paging handles moving
+        between pages of a multi-page CV within that fixed area.
+      {% endcomment %}
+      <div class="cv-pdf-embed">
         <iframe
           src="{{ cv_embed_src }}"
           title="{{ page.title }}"
-          style="width: 100%; height: 85vh; border: 1px solid var(--global-divider-color); border-radius: 8px;"
+          style="width: 100%; height: calc(100vh - 56px - 70px - 24px); border: 1px solid var(--global-divider-color); border-radius: 8px;"
         ></iframe>
       </div>
     {% endif %}
