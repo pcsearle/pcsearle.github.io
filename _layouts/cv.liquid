@@ -38,16 +38,15 @@ layout: default
       {% endif %}
       {% comment %}
         Sized to fill exactly the space between the fixed navbar (56px) and
-        fixed footer (70px), so the outer page never needs to scroll -- the
-        embedded PDF viewer's own internal scrolling/paging handles moving
-        between pages of a multi-page CV within that fixed area.
+        fixed footer (70px), so the outer page never needs to scroll. The
+        iframe itself is narrowed (see .cv-pdf-embed in _base.scss) so a
+        full CV page fits within that height without being cut off --
+        Google's preview renders width-to-height at a fixed ratio, so a
+        narrower iframe means a shorter rendered page. Scrolling inside the
+        iframe then moves cleanly from one full page to the next.
       {% endcomment %}
       <div class="cv-pdf-embed">
-        <iframe
-          src="{{ cv_embed_src }}"
-          title="{{ page.title }}"
-          style="width: 100%; height: calc(100vh - 56px - 70px - 24px); border: 1px solid var(--global-divider-color); border-radius: 8px;"
-        ></iframe>
+        <iframe src="{{ cv_embed_src }}" title="{{ page.title }}"></iframe>
       </div>
     {% endif %}
 
