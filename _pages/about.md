@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Visual Ecologist
+subtitle: Visual Ecologist | Ichthyologist | Conservation Biologist
 
 social: true # includes social icons at the bottom of the page
 
@@ -16,16 +16,16 @@ I am Ph.D. Candidate in the [Department of Ecology and Evolutionary Biology](htt
 </div>
 <div class="about-collage">
 <div class="collage-item">
-<img src="{{ '/assets/img/about_gallery/field_09.jpg' | relative_url }}" alt="Peter Searle with his field research team">
+<img src="{{ '/assets/img/about_gallery/field_07.jpg' | relative_url }}" alt="Peter Searle holding a large fish on a fishing boat">
 </div>
 <div class="collage-item">
-<img src="{{ '/assets/img/about_gallery/field_07.jpg' | relative_url }}" alt="Peter Searle holding a large fish on a fishing boat">
+<img src="{{ '/assets/img/about_gallery/field_01.jpg' | relative_url }}" alt="Peter Searle with his family" class="collage-family-photo">
 </div>
 <div class="collage-item">
 <img src="{{ '/assets/img/about_gallery/field_04.jpg' | relative_url }}" alt="Peter Searle fly fishing in the ocean">
 </div>
 <div class="collage-item">
-<img src="{{ '/assets/img/about_gallery/field_01.jpg' | relative_url }}" alt="Peter Searle with his family">
+<img src="{{ '/assets/img/about_gallery/field_09.jpg' | relative_url }}" alt="Peter Searle with his field research team">
 </div>
 </div>
 </div>

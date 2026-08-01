@@ -708,6 +708,7 @@ footer.sticky-bottom {
   align-items: center;
   gap: 1.5rem;
   margin-top: 0.5rem;
+  margin-bottom: 2rem; // more breathing room before the social icons below
 
   .about-text {
     flex: 1 1 55%;
@@ -732,7 +733,15 @@ footer.sticky-bottom {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center; // default crop
         border-radius: 8px;
+
+        // The family photo: shift the crop left/up so his wife's face
+        // (positioned toward the left edge of the original photo) doesn't
+        // get cut off by the square cover-crop.
+        &.collage-family-photo {
+          object-position: 30% 35%;
+        }
       }
     }
   }
