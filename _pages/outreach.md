@@ -42,7 +42,7 @@ I care about making science accessible outside the lab &mdash; whether that's wr
 <div class="row align-items-center">
     <div class="col-md-6">
         <a href="https://www.youtube.com/watch?v=89BVXA2LCYY" target="_blank" rel="noopener noreferrer">
-            {% include figure.liquid path="assets/img/outreach/byu_fly_fishing_class.jpg" title="BYU fly fishing class in the field" class="img-fluid rounded z-depth-1" %}
+            {% include figure.liquid path="assets/img/outreach/alaska_school_of_fish.jpg" title="Fieldwork at Pybus Point Lodge, Admiralty Island, Alaska" class="img-fluid rounded z-depth-1" %}
         </a>
     </div>
     <div class="col-md-6">
@@ -55,7 +55,10 @@ I care about making science accessible outside the lab &mdash; whether that's wr
 <hr class="my-4">
 
 <div class="row align-items-center">
-    <div class="col-md-12">
+    <div class="col-md-6">
+        {% include figure.liquid path="assets/img/outreach/byu_fly_fishing_class.jpg" title="BYU fly fishing class in the field" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-md-6">
         <h3>Fly Fishing Instruction</h3>
         <p>Outside of research, I teach fly fishing &mdash; from merit badge classes to introductory courses at BYU &mdash; helping people get outside, learn to read water, and hopefully catch their first fish on a fly.</p>
     </div>
