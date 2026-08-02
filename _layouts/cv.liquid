@@ -37,17 +37,40 @@ layout: default
         {% assign cv_embed_src = page.cv_pdf | prepend: 'assets/pdf/' | relative_url %}
       {% endif %}
       {% comment %}
-        Sized to fill exactly the space between the fixed navbar (56px) and
-        fixed footer (70px), so the outer page never needs to scroll. The
-        iframe itself is narrowed (see .cv-pdf-embed in _base.scss) so a
-        full CV page fits within that height without being cut off --
-        Google's preview renders width-to-height at a fixed ratio, so a
-        narrower iframe means a shorter rendered page. Scrolling inside the
-        iframe then moves cleanly from one full page to the next.
+        Sized to fill exactly the space between the fixed navbar and fixed
+        footer, so the outer page never needs to scroll. The iframe itself
+        is narrowed (see .cv-pdf-embed in _base.scss) so a full CV page
+        fits within that height without being cut off -- Google's preview
+        renders width-to-height at a fixed ratio, so a narrower iframe
+        means a shorter rendered page. Scrolling inside the iframe then
+        moves cleanly from one full page to the next.
+
+        --navbar-height/--footer-height are measured from the real
+        rendered elements (rather than hardcoded guesses) so the
+        top/bottom margin around the embed stays equal even if, say, the
+        footer's copyright text wraps to a different number of lines at a
+        given width.
       {% endcomment %}
       <div class="cv-pdf-embed">
         <iframe src="{{ cv_embed_src }}" title="{{ page.title }}"></iframe>
       </div>
+      <script>
+        (function () {
+          function setCvSpacingVars() {
+            var navbar = document.getElementById('navbar');
+            var footer = document.querySelector('footer.fixed-bottom, footer.sticky-bottom');
+            var root = document.documentElement;
+            if (navbar) {
+              root.style.setProperty('--navbar-height', navbar.offsetHeight + 'px');
+            }
+            if (footer) {
+              root.style.setProperty('--footer-height', footer.offsetHeight + 'px');
+            }
+          }
+          setCvSpacingVars();
+          window.addEventListener('resize', setCvSpacingVars);
+        })();
+      </script>
     {% endif %}
 
     <article>

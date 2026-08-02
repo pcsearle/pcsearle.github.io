@@ -1578,19 +1578,31 @@ body:has(.cv-pdf-embed) {
 // sizes the container to exactly fill the navbar-to-footer gap, then
 // centers its content (the .post block, effectively just the CV embed
 // since the page header is hidden) vertically within that space.
+// --navbar-height/--footer-height are set from actual measured pixel
+// heights by a small script in cv.liquid (the 56px/70px here are just
+// fallbacks for the instant before that script runs) -- this avoids
+// hardcoding guesses that drift out of sync with the real rendered
+// navbar/footer (e.g. when the footer's copyright text wraps to more
+// lines at narrower widths), which was causing uneven top/bottom space.
 .container:has(.cv-pdf-embed) {
   margin-top: 0;
-  height: calc(100vh - 56px - 70px);
+  height: calc(100vh - var(--navbar-height, 56px) - var(--footer-height, 70px));
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+// 24px reserved margin above and below the embed itself, on top of the
+// container already being sized to exactly fill the navbar-to-footer
+// gap -- since the container centers this block, the leftover 2*24px
+// splits evenly into 24px top + 24px bottom automatically.
 .cv-pdf-embed {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: calc(100vh - 56px - 70px - 24px);
+  height: calc(
+    100vh - var(--navbar-height, 56px) - var(--footer-height, 70px) - 48px
+  );
   overflow: hidden;
 
   iframe {
