@@ -1586,7 +1586,7 @@ body:has(.cv-pdf-embed) {
 // lines at narrower widths), which was causing uneven top/bottom space.
 .container:has(.cv-pdf-embed) {
   margin-top: 0;
-  height: calc(100vh - var(--navbar-height, 56px) - var(--footer-height, 70px));
+  height: #{'calc(100vh - var(--navbar-height, 56px) - var(--footer-height, 70px))'};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1600,9 +1600,7 @@ body:has(.cv-pdf-embed) {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: calc(
-    100vh - var(--navbar-height, 56px) - var(--footer-height, 70px) - 48px
-  );
+  height: #{'calc(100vh - var(--navbar-height, 56px) - var(--footer-height, 70px) - 48px)'};
   overflow: hidden;
 
   iframe {
