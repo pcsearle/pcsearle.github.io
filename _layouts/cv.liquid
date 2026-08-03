@@ -59,13 +59,14 @@ layout: default
           function setCvSpacingVars() {
             var navbar = document.getElementById('navbar');
             var footer = document.querySelector('footer.fixed-bottom, footer.sticky-bottom');
+            var navbarHeight = navbar ? navbar.offsetHeight : 56;
+            var footerHeight = footer ? footer.offsetHeight : 70;
+            var available = window.innerHeight - navbarHeight - footerHeight;
             var root = document.documentElement;
-            if (navbar) {
-              root.style.setProperty('--navbar-height', navbar.offsetHeight + 'px');
-            }
-            if (footer) {
-              root.style.setProperty('--footer-height', footer.offsetHeight + 'px');
-            }
+            // Fully-resolved pixel values, not calc() expressions referencing
+            // other custom properties -- see the comment in _base.scss for why.
+            root.style.setProperty('--cv-container-height', available + 'px');
+            root.style.setProperty('--cv-embed-height', (available - 48) + 'px');
           }
           setCvSpacingVars();
           window.addEventListener('resize', setCvSpacingVars);

@@ -1578,15 +1578,23 @@ body:has(.cv-pdf-embed) {
 // sizes the container to exactly fill the navbar-to-footer gap, then
 // centers its content (the .post block, effectively just the CV embed
 // since the page header is hidden) vertically within that space.
-// --navbar-height/--footer-height are set from actual measured pixel
-// heights by a small script in cv.liquid (the 56px/70px here are just
-// fallbacks for the instant before that script runs) -- this avoids
-// hardcoding guesses that drift out of sync with the real rendered
-// navbar/footer (e.g. when the footer's copyright text wraps to more
-// lines at narrower widths), which was causing uneven top/bottom space.
+//
+// --cv-container-height/--cv-embed-height are set to fully-resolved
+// pixel values (not calc() expressions referencing other variables) by
+// a small script in cv.liquid, computed from the *real* measured
+// navbar/footer heights. This avoids both hardcoded guesses (which
+// drift out of sync with the real rendered navbar/footer -- e.g. when
+// the footer's copyright text wraps to a different number of lines at
+// a given width) AND a build-pipeline bug where a calc() containing a
+// var(--custom-property) reference gets corrupted by the site's CSS
+// minifier (it was mangling `var(--navbar-height)` into
+// `var( -  - navbar - height)`, silently breaking the whole
+// declaration). Passing a single resolved px value sidesteps that
+// entirely -- the calc() fallbacks below are plain arithmetic with no
+// nested var(), which is safe.
 .container:has(.cv-pdf-embed) {
   margin-top: 0;
-  height: #{'calc(100vh - var(--navbar-height, 56px) - var(--footer-height, 70px))'};
+  height: var(--cv-container-height, calc(100vh - 126px));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1600,7 +1608,7 @@ body:has(.cv-pdf-embed) {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: #{'calc(100vh - var(--navbar-height, 56px) - var(--footer-height, 70px) - 48px)'};
+  height: var(--cv-embed-height, calc(100vh - 174px));
   overflow: hidden;
 
   iframe {
